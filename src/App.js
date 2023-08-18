@@ -1,24 +1,18 @@
-import logo from './logo.svg';
+import Modal from './components/Modal';
+import Table from './components/Table';
+import React,{useState} from 'react';
 import './App.css';
+// import {Routes, Route} from Router;
 
 function App() {
+  const[data,setData] = useState([]);
+
+  // we used state to get the data from the Form which is in Modal.
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Table data={data} setData={setData}/>
+    <Modal setData={setData} data={data}/>
+    </>
   );
 }
 
